@@ -54,7 +54,7 @@ const RegisterScreen = () => {
             <TouchableWithoutFeedback onPress={() => { Keyboard.dismiss() }}>
                 <SafeAreaView style={styles.container}>
                     <Text style={styles.loginText}>SIGN UP</Text>
-                    <Alert msg={alert} />
+                    <Alert msg={alert} size={15} />
                     <TextInput
                         placeholder="Email"
                         style={[styles.textInput]}

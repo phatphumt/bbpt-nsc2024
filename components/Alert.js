@@ -13,7 +13,7 @@ export default function Alert(props) {
 const stt = StyleSheet.create({
     text: {
         color: 'red',
-        fontSize: 15,
+        fontSize: props.size,
         fontFamily: "VarelaRound",
         textAlign: 'center'
     }

@@ -50,7 +50,7 @@ const LoginScreen = () => {
                 <SafeAreaView style={styles.container}>
 
                     <Text style={styles.loginText}>SIGN IN</Text>
-                    <Alert msg={alert} />
+                    <Alert msg={alert} size={15} />
                     <TextInput
                         placeholder="Email"
                         style={[styles.textInput]}
