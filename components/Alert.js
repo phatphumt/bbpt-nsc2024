@@ -5,16 +5,12 @@ export default function Alert(props) {
     if (!props.msg) { return <Text></Text> }
     return (
         <View>
-            <Text style={stt.text}>{props.msg}</Text>
+            <Text style={{
+                color: 'red',
+                fontSize: props.size,
+                fontFamily: "VarelaRound",
+                textAlign: 'center'
+            }}>{props.msg}</Text>
         </View>
     )
 }
-
-const stt = StyleSheet.create({
-    text: {
-        color: 'red',
-        fontSize: props.size,
-        fontFamily: "VarelaRound",
-        textAlign: 'center'
-    }
-})

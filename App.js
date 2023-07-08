@@ -6,6 +6,10 @@ import LoginScreen from "./screens/LoginScreens"
 import AppLoading from "expo-app-loading"
 import RegisterScreen from "./screens/RegisterScreen"
 import HomeScreen from "./screens/HomeScreen"
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import TripScreen from './screens/TripScreen'
+import DiaryScreen from './screens/DiaryScreen'
+import BottomTabNavigator from './navigator/BottomTabNavigator'
 
 
 const App = () => {
@@ -17,12 +21,13 @@ const App = () => {
     return <AppLoading />
   }
   const Stack = createNativeStackNavigator()
+  const Tab = createBottomTabNavigator()
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="Main" component={BottomTabNavigator} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
 
