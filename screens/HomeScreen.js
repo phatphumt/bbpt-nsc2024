@@ -54,7 +54,7 @@ const HomeScreen = () => {
                     <Text style={styles.headerText}>Get Started</Text>
                     <View style={styles.buttonWrapper}>
                         <MenuButton msg={"Plan a Trip"} iconName={"clipboard-check"} onClick={() => navigation.navigate('Main', { screen: 'trips' })} />
-                        <MenuButton msg={"My Diaries"} iconName={"book"} onClick={() => navigation.navigate('Main', { screen: 'diaries' })} />
+                        <MenuButton msg={"My Diaries"} iconName={"book"} onClick={() => { console.log('hi'); navigation.navigate('Main', { screen: 'diaries' }) }} />
                     </View>
                     <Text style={[styles.headerText, { paddingVertical: '5%' }]}>Featured Trip</Text>
                     <View style={styles.featuredCardWrapper}>

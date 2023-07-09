@@ -11,7 +11,7 @@ import {
 const MenuButton = (props) => {
     const { button, contentWrapper, text } = styles
     return (
-        <TouchableOpacity style={button}>
+        <TouchableOpacity style={button} onPress={props.onClick}>
             <View style={contentWrapper}>
                 <FontAwesome5 name={props.iconName} size={70} color="white" />
                 <Text style={text}>{props.msg}</Text>
