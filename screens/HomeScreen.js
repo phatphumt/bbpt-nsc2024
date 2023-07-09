@@ -56,8 +56,10 @@ const HomeScreen = () => {
                         <MenuButton msg={"Plan a Trip"} iconName={"clipboard-check"} onClick={() => navigation.navigate('Main', { screen: 'trips' })} />
                         <MenuButton msg={"My Diaries"} iconName={"book"} onClick={() => navigation.navigate('Main', { screen: 'diaries' })} />
                     </View>
-                    <Text style={[styles.headerText, { paddingTop: '5%' }]}>Featured Trip</Text>
-                    <FeaturedButton msg={"My Diaries"} iconName={"book"} onClick={() => navigation.navigate('Main', { screen: 'diaries' })} />
+                    <Text style={[styles.headerText, { paddingVertical: '5%' }]}>Featured Trip</Text>
+                    <View style={styles.featuredCardWrapper}>
+                        <FeaturedButton text={'Trip 1'} subtitle={'3 Days'} iconName={"book"} onClick={() => navigation.navigate('Main', { screen: 'diaries' })} />
+                    </View>
                 </View>
             </SafeAreaView>
         </ImageBackground >
@@ -102,35 +104,8 @@ const styles = StyleSheet.create({
         padding: 10,
         justifyContent: 'space-evenly',
         marginTop: '4%'
-    }, featuredTripsBtn: {
+    }, featuredCardWrapper: {
         flexDirection: 'row',
-        padding: 10,
-        marginTop: '4%',
-        backgroundColor: colors.mainColor,
-        borderRadius: 10,
-        width: "60%",
-
-    }, featuredContentWrapper: {
-        flexDirection: 'row',
-        alignItems: 'center',
         justifyContent: 'center'
-    }, featuredTxtWrapper: {
-        flexDirection: 'column',
-        backgroundColor: '#fff',
-        alignItems: 'center'
-    }, imgWrapper: {
-        alignItems: 'center',
-        alignContent: 'center'
-    }, featuredTxt: {
-        textAlign: 'center',
-        fontFamily: fonts.mainFont,
-        fontSize: 20
-    }, featuredTripsWrapper: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-    }, featuredTxtWrapper1: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginHorizontal: '6%'
     }
 })
