@@ -13,9 +13,10 @@ import {
 } from 'react-native'
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigation } from '@react-navigation/native'
 import { firebase_auth } from '../firebase';
+import { fonts } from '../configs/config'
 import Alert from '../components/Alert';
 
 const LoginScreen = () => {
@@ -74,6 +75,16 @@ const LoginScreen = () => {
                     }}>
                         <Text style={styles.goToSignUpText}>Don’t have an account? Sign up here</Text>
                     </TouchableOpacity>
+                    <TouchableOpacity style={styles.goToSignUp} onPress={() => {
+                        signInWithEmailAndPassword(auth, "example@gmail.com", "example123123")
+                            .then(userCredentials => {
+                                const user = userCredentials.user;
+                                console.log('Logged In with:', user.email);
+                            })
+                            .catch(error => setAlert(error.message))
+                    }}>
+                        <Text style={styles.goToSignUpText}>Test</Text>
+                    </TouchableOpacity>
                 </SafeAreaView>
             </TouchableWithoutFeedback>
         </ImageBackground>
@@ -93,7 +104,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: '#3D4267',
         fontSize: 40,
-        fontFamily: "VarelaRound"
+        fontFamily: fonts.mainFont
     },
     signinButton: {
         margin: 10,
@@ -105,7 +116,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 50,
         color: "#fff",
         fontSize: 20,
-        fontFamily: "VarelaRound"
+        fontFamily: fonts.mainFont
     },
     textInput: {
         marginBottom: 5,
@@ -117,7 +128,7 @@ const styles = StyleSheet.create({
         backgroundColor: "rgba(44, 19, 64, 0.2)",
         borderRadius: 10,
         padding: 10,
-        fontFamily: "VarelaRound",
+        fontFamily: fonts.mainFont,
         fontSize: 14
     },
     textPasswordInput: {
@@ -129,7 +140,7 @@ const styles = StyleSheet.create({
         backgroundColor: "rgba(44, 19, 64, 0.25)",
         borderRadius: 10,
         padding: 10,
-        fontFamily: "VarelaRound",
+        fontFamily: fonts.mainFont,
         fontSize: 14
     },
     image: {
@@ -141,6 +152,6 @@ const styles = StyleSheet.create({
     },
     goToSignUpText: {
         fontSize: 14,
-        fontFamily: "VarelaRound"
+        fontFamily: fonts.mainFont
     }
 })

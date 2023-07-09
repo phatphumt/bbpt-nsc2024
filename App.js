@@ -5,11 +5,9 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import LoginScreen from "./screens/LoginScreens"
 import AppLoading from "expo-app-loading"
 import RegisterScreen from "./screens/RegisterScreen"
-import HomeScreen from "./screens/HomeScreen"
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import TripScreen from './screens/TripScreen'
-import DiaryScreen from './screens/DiaryScreen'
 import BottomTabNavigator from './navigator/BottomTabNavigator'
+import DiaryScreen from './screens/DiaryScreen'
 
 
 const App = () => {

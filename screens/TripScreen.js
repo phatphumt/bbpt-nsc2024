@@ -1,10 +1,10 @@
-import { View, Text } from 'react-native'
+import { View, Text, SafeAreaView } from 'react-native'
 import React from 'react'
 
 export default function TripScreen() {
     return (
-        <View>
+        <SafeAreaView>
             <Text>TripScreen</Text>
-        </View>
+        </SafeAreaView>
     )
 }

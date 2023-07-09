@@ -1,10 +1,10 @@
 import { View, Text, SafeAreaView } from 'react-native'
 import React from 'react'
 
-export default function ScreenTest() {
+export default function SettingScreen() {
     return (
         <SafeAreaView>
-            <Text>ScreenTest</Text>
+            <Text>SettingScreen</Text>
         </SafeAreaView>
     )
 }
